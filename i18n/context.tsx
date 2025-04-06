@@ -7,7 +7,7 @@ import { defaultLocale, locales, Locale, Messages, getNestedValue } from './conf
 import ja from './ja.json';
 import en from './en.json';
 
-const translations = {
+const translations: Record<Locale, Messages> = {
   ja,
   en
 };
@@ -31,13 +31,13 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     // Check if there's a saved locale in localStorage
     try {
       const savedLocale = localStorage.getItem('locale') as Locale | null;
-      if (savedLocale && locales.includes(savedLocale)) {
-        setLocale(savedLocale);
+      if (savedLocale && locales.includes(savedLocale as Locale)) {
+        setLocale(savedLocale as Locale);
       } else {
         // Try to detect browser language
-        const browserLocale = navigator.language.split('-')[0] as Locale;
-        if (locales.includes(browserLocale)) {
-          setLocale(browserLocale);
+        const browserLocale = navigator.language.split('-')[0];
+        if (locales.includes(browserLocale as Locale)) {
+          setLocale(browserLocale as Locale);
         }
       }
     } catch (error) {
@@ -57,7 +57,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   const t = (key: string): string => {
     try {
-      const messages = translations[locale] as Messages;
+      const messages = translations[locale];
       return getNestedValue(messages, key);
     } catch (error) {
       console.error(`Translation error for key: ${key}`, error);
@@ -74,7 +74,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
           setLocale: () => {},
           t: (key) => {
             try {
-              const messages = translations[defaultLocale] as Messages;
+              const messages = translations[defaultLocale];
               return getNestedValue(messages, key);
             } catch (error) {
               return key;

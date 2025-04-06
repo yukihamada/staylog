@@ -133,7 +133,7 @@ export default function StayLogPricing({ user }: Props) {
                           />
                         </svg>
                         <span className="text-sm text-zinc-200">
-                          {t(`pricing.plans.${plan.id}.features.${index}`)}
+                          {feature}
                         </span>
                       </li>
                     ))}
