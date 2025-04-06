@@ -24,31 +24,70 @@ const I18nContext = createContext<I18nContextType | null>(null);
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setLocale] = useState<Locale>(defaultLocale);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     // Check if there's a saved locale in localStorage
-    const savedLocale = localStorage.getItem('locale') as Locale | null;
-    if (savedLocale && locales.includes(savedLocale)) {
-      setLocale(savedLocale);
-    } else {
-      // Try to detect browser language
-      const browserLocale = navigator.language.split('-')[0] as Locale;
-      if (locales.includes(browserLocale)) {
-        setLocale(browserLocale);
+    try {
+      const savedLocale = localStorage.getItem('locale') as Locale | null;
+      if (savedLocale && locales.includes(savedLocale)) {
+        setLocale(savedLocale);
+      } else {
+        // Try to detect browser language
+        const browserLocale = navigator.language.split('-')[0] as Locale;
+        if (locales.includes(browserLocale)) {
+          setLocale(browserLocale);
+        }
       }
+    } catch (error) {
+      console.error('Error accessing localStorage:', error);
     }
   }, []);
 
   const handleSetLocale = (newLocale: Locale) => {
     setLocale(newLocale);
-    localStorage.setItem('locale', newLocale);
-    document.documentElement.lang = newLocale;
+    try {
+      localStorage.setItem('locale', newLocale);
+      document.documentElement.lang = newLocale;
+    } catch (error) {
+      console.error('Error setting localStorage:', error);
+    }
   };
 
   const t = (key: string): string => {
-    const messages = translations[locale] as Messages;
-    return getNestedValue(messages, key);
+    try {
+      const messages = translations[locale] as Messages;
+      return getNestedValue(messages, key);
+    } catch (error) {
+      console.error(`Translation error for key: ${key}`, error);
+      return key;
+    }
   };
+
+  // During SSR, use default translations to avoid hydration mismatch
+  if (!mounted) {
+    return (
+      <I18nContext.Provider
+        value={{
+          locale: defaultLocale,
+          setLocale: () => {},
+          t: (key) => {
+            try {
+              const messages = translations[defaultLocale] as Messages;
+              return getNestedValue(messages, key);
+            } catch (error) {
+              return key;
+            }
+          },
+          locales,
+          defaultLocale
+        }}
+      >
+        {children}
+      </I18nContext.Provider>
+    );
+  }
 
   return (
     <I18nContext.Provider
