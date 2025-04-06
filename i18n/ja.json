@@ -1,0 +1,231 @@
+{
+  "common": {
+    "signIn": "ログイン",
+    "signUp": "新規登録",
+    "signOut": "ログアウト",
+    "account": "アカウント",
+    "pricing": "料金プラン",
+    "features": "機能",
+    "support": "サポート",
+    "getStarted": "はじめる",
+    "viewPricing": "料金を見る",
+    "submit": "送信",
+    "cancel": "キャンセル",
+    "save": "保存",
+    "delete": "削除",
+    "edit": "編集",
+    "back": "戻る",
+    "next": "次へ",
+    "required": "必須",
+    "optional": "任意",
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "success": "成功"
+  },
+  "home": {
+    "title": "宿泊者登録を簡単に",
+    "subtitle": "あなたの宿泊施設のために",
+    "description": "StayLogは旅館業法に基づく宿泊者情報の収集と管理を簡単にします。時間を節約し、エラーを減らし、チェックイン体験を向上させましょう。",
+    "cta": "今すぐ始める"
+  },
+  "pricing": {
+    "title": "StayLog 料金プラン",
+    "subtitle": "宿泊施設のニーズに合わせた最適なプランをお選びください。すべてのプランに基本的な宿泊者登録機能が含まれています。",
+    "monthlyBilling": "月額課金",
+    "yearlyBilling": "年額課金",
+    "perMonth": "/月",
+    "perYear": "/年",
+    "subscribe": "申し込む",
+    "manage": "管理",
+    "signUpToSubscribe": "登録して申し込む",
+    "whatsIncluded": "含まれる機能",
+    "currencyNote": "すべての価格は日本円（JPY）です。年額課金は月額課金と比較して15%お得です。",
+    "plans": {
+      "basic": {
+        "name": "ベーシック",
+        "description": "小規模な宿泊施設向けの基本プラン",
+        "features": [
+          "1施設での利用",
+          "月間100件の宿泊者登録",
+          "基本的な宿泊者情報管理",
+          "メールサポート"
+        ]
+      },
+      "standard": {
+        "name": "スタンダード",
+        "description": "中規模な宿泊施設向けの標準プラン",
+        "features": [
+          "最大3施設での利用",
+          "月間500件の宿泊者登録",
+          "高度な分析機能",
+          "複数言語対応",
+          "メール・チャットサポート"
+        ]
+      },
+      "professional": {
+        "name": "プロフェッショナル",
+        "description": "大規模な宿泊施設向けのプロフェッショナルプラン",
+        "features": [
+          "無制限の施設数",
+          "無制限の宿泊者登録",
+          "API連携",
+          "カスタムフォーム作成",
+          "優先サポート",
+          "専任アカウントマネージャー"
+        ]
+      }
+    }
+  },
+  "features": {
+    "title": "機能",
+    "subtitle": "宿泊者登録に必要なすべてのツール",
+    "description": "StayLogは宿泊者登録プロセスを効率化し、法規制に準拠するために必要なすべてのツールを提供します。",
+    "list": {
+      "registration": {
+        "title": "簡単な宿泊者登録",
+        "description": "事前に記入できるデジタルフォームでチェックインプロセスを簡素化します。"
+      },
+      "multilingual": {
+        "title": "多言語対応",
+        "description": "日本語、英語、中国語、韓国語で利用可能なフォームで世界中のゲストをサポートします。"
+      },
+      "compliance": {
+        "title": "法的コンプライアンス",
+        "description": "適切なデータ収集と保存により、旅館業法などの規制に準拠します。"
+      },
+      "qrCode": {
+        "title": "QRコード共有",
+        "description": "ゲストが自分のデバイスで簡単に登録フォームにアクセスできるQRコードを生成します。"
+      },
+      "secureStorage": {
+        "title": "安全なデータ保存",
+        "description": "暗号化されたストレージと適切なアクセス制御でゲスト情報を安全に保管します。"
+      },
+      "analytics": {
+        "title": "分析ダッシュボード",
+        "description": "詳細な分析でゲストの人口統計と登録パターンに関する洞察を得ることができます。"
+      }
+    }
+  },
+  "registration": {
+    "title": "宿泊者登録",
+    "subtitle": "旅館業法で必要な情報をご提供ください。",
+    "form": {
+      "fullName": "氏名",
+      "address": "住所",
+      "phone": "電話番号",
+      "nationality": "国籍",
+      "passportNumber": "パスポート番号（外国籍の方）",
+      "passportNote": "日本国籍の方は不要です",
+      "dateOfBirth": "生年月日",
+      "idPhoto": "身分証明書の写真",
+      "idPhotoNote": "身分証明書（運転免許証、パスポートなど）の写真をアップロードしてください。プライバシー保護のため、機密情報は隠してください。",
+      "register": "登録する"
+    },
+    "confirmation": {
+      "title": "登録完了",
+      "subtitle": "情報の登録が完了しました。",
+      "message": "ご登録ありがとうございます。",
+      "otherGuests": "同行者がいる場合は、登録リンクを共有してください。",
+      "shareInfo": "このリンクを同行者と共有して、情報を登録してもらいましょう。",
+      "registrationUrl": "登録URL",
+      "copy": "コピー",
+      "copied": "コピーしました！",
+      "showQrCode": "QRコードを表示",
+      "hideQrCode": "QRコードを隠す",
+      "share": "共有",
+      "backToHome": "ホームに戻る"
+    }
+  },
+  "account": {
+    "title": "アカウント",
+    "subtitle": "アカウント情報とサブスクリプションを管理します。",
+    "profile": {
+      "title": "プロフィール",
+      "name": "名前",
+      "email": "メールアドレス",
+      "updateProfile": "プロフィールを更新"
+    },
+    "subscription": {
+      "title": "サブスクリプション",
+      "currentPlan": "現在のプラン",
+      "status": "ステータス",
+      "nextBilling": "次回請求日",
+      "manageBilling": "請求を管理",
+      "cancelSubscription": "サブスクリプションをキャンセル",
+      "reactivateSubscription": "サブスクリプションを再開",
+      "noPlan": "現在アクティブなプランはありません。",
+      "choosePlan": "プランを選択"
+    },
+    "facilities": {
+      "title": "施設",
+      "addFacility": "施設を追加",
+      "editFacility": "施設を編集",
+      "deleteFacility": "施設を削除",
+      "noFacilities": "登録されている施設はありません。",
+      "name": "施設名",
+      "address": "住所",
+      "type": "施設タイプ",
+      "capacity": "収容人数"
+    }
+  },
+  "auth": {
+    "signIn": {
+      "title": "ログイン",
+      "subtitle": "アカウントにログインしてください。",
+      "email": "メールアドレス",
+      "password": "パスワード",
+      "forgotPassword": "パスワードをお忘れですか？",
+      "noAccount": "アカウントをお持ちでないですか？",
+      "createAccount": "アカウントを作成",
+      "signInButton": "ログイン"
+    },
+    "signUp": {
+      "title": "新規登録",
+      "subtitle": "アカウントを作成してください。",
+      "name": "名前",
+      "email": "メールアドレス",
+      "password": "パスワード",
+      "confirmPassword": "パスワード（確認）",
+      "haveAccount": "すでにアカウントをお持ちですか？",
+      "signIn": "ログイン",
+      "signUpButton": "登録",
+      "termsAndConditions": "利用規約に同意します",
+      "privacyPolicy": "プライバシーポリシーに同意します"
+    },
+    "forgotPassword": {
+      "title": "パスワードをリセット",
+      "subtitle": "パスワードをリセットするためのリンクをお送りします。",
+      "email": "メールアドレス",
+      "sendResetLink": "リセットリンクを送信",
+      "backToSignIn": "ログインに戻る"
+    },
+    "resetPassword": {
+      "title": "新しいパスワードを設定",
+      "subtitle": "新しいパスワードを入力してください。",
+      "newPassword": "新しいパスワード",
+      "confirmPassword": "パスワード（確認）",
+      "resetPassword": "パスワードをリセット"
+    }
+  },
+  "errors": {
+    "general": "エラーが発生しました。もう一度お試しください。",
+    "auth": {
+      "invalidCredentials": "メールアドレスまたはパスワードが正しくありません。",
+      "emailInUse": "このメールアドレスは既に使用されています。",
+      "weakPassword": "パスワードが弱すぎます。少なくとも8文字以上で、文字、数字、記号を含めてください。",
+      "passwordMismatch": "パスワードが一致しません。",
+      "invalidEmail": "有効なメールアドレスを入力してください。"
+    },
+    "form": {
+      "required": "このフィールドは必須です。",
+      "invalidFormat": "形式が正しくありません。",
+      "tooShort": "入力が短すぎます。",
+      "tooLong": "入力が長すぎます。"
+    },
+    "subscription": {
+      "paymentFailed": "支払いに失敗しました。支払い方法を確認してください。",
+      "alreadySubscribed": "既にこのプランに登録されています。"
+    }
+  }
+}

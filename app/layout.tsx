@@ -4,6 +4,8 @@ import Navbar from '@/components/ui/Navbar';
 import { Toaster } from '@/components/ui/Toasts/toaster';
 import { PropsWithChildren, Suspense } from 'react';
 import { getURL } from '@/utils/helpers';
+import { I18nProvider } from '@/i18n/context';
+import { defaultLocale } from '@/i18n/config';
 import 'styles/main.css';
 
 const title = 'StayLog - Easy & Secure Guest Registration';
@@ -21,19 +23,21 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en">
+    <html lang={defaultLocale}>
       <body className="bg-black">
-        <Navbar />
-        <main
-          id="skip"
-          className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]"
-        >
-          {children}
-        </main>
-        <Footer />
-        <Suspense>
-          <Toaster />
-        </Suspense>
+        <I18nProvider>
+          <Navbar />
+          <main
+            id="skip"
+            className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]"
+          >
+            {children}
+          </main>
+          <Footer />
+          <Suspense>
+            <Toaster />
+          </Suspense>
+        </I18nProvider>
       </body>
     </html>
   );

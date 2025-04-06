@@ -6,6 +6,7 @@ import { User } from '@supabase/supabase-js';
 import cn from 'classnames';
 import { useRouter, usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { useI18n } from '@/i18n/context';
 
 interface Props {
   user: User | null | undefined;
@@ -18,6 +19,7 @@ export default function StayLogPricing({ user }: Props) {
   const [billingInterval, setBillingInterval] = useState<BillingInterval>('month');
   const [priceIdLoading, setPriceIdLoading] = useState<string>();
   const currentPath = usePathname();
+  const { t } = useI18n();
 
   const handleCheckout = async (priceId: string) => {
     setPriceIdLoading(priceId);
@@ -33,14 +35,14 @@ export default function StayLogPricing({ user }: Props) {
   };
 
   return (
-    <section className="bg-black">
+    <section className="bg-black" id="pricing">
       <div className="max-w-6xl px-4 py-8 mx-auto sm:py-24 sm:px-6 lg:px-8">
         <div className="sm:flex sm:flex-col sm:align-center">
           <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
-            StayLog Pricing Plans
+            {t('pricing.title')}
           </h1>
           <p className="max-w-2xl m-auto mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl">
-            Choose the perfect plan for your accommodation needs. All plans include our core guest registration features.
+            {t('pricing.subtitle')}
           </p>
           <div className="relative self-center mt-6 bg-zinc-900 rounded-lg p-0.5 flex sm:mt-8 border border-zinc-800">
             <button
@@ -52,7 +54,7 @@ export default function StayLogPricing({ user }: Props) {
                   : 'ml-0.5 relative w-1/2 border border-transparent text-zinc-400'
               } rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
             >
-              Monthly billing
+              {t('pricing.monthlyBilling')}
             </button>
             <button
               onClick={() => setBillingInterval('year')}
@@ -63,7 +65,7 @@ export default function StayLogPricing({ user }: Props) {
                   : 'ml-0.5 relative w-1/2 border border-transparent text-zinc-400'
               } rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
             >
-              Yearly billing
+              {t('pricing.yearlyBilling')}
             </button>
           </div>
         </div>
@@ -82,22 +84,22 @@ export default function StayLogPricing({ user }: Props) {
                 className={cn(
                   'rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900',
                   {
-                    'border border-indigo-500': plan.name === 'Standard',
-                    'border border-zinc-800': plan.name !== 'Standard'
+                    'border border-indigo-500': plan.id === 'standard',
+                    'border border-zinc-800': plan.id !== 'standard'
                   }
                 )}
               >
                 <div className="p-6">
                   <h2 className="text-2xl font-semibold leading-6 text-white">
-                    {plan.name}
+                    {t(`pricing.plans.${plan.id}.name`)}
                   </h2>
-                  <p className="mt-4 text-zinc-300">{plan.description}</p>
+                  <p className="mt-4 text-zinc-300">{t(`pricing.plans.${plan.id}.description`)}</p>
                   <p className="mt-8">
                     <span className="text-5xl font-extrabold white">
                       {priceString}
                     </span>
                     <span className="text-base font-medium text-zinc-100">
-                      /{billingInterval}
+                      {billingInterval === 'month' ? t('pricing.perMonth') : t('pricing.perYear')}
                     </span>
                   </p>
                   <Button
@@ -107,16 +109,16 @@ export default function StayLogPricing({ user }: Props) {
                     onClick={() => handleCheckout(price.id)}
                     className="block w-full py-2 mt-8 text-sm font-semibold text-center text-white rounded-md hover:bg-zinc-900"
                   >
-                    {user ? 'Subscribe' : 'Sign up'}
+                    {user ? t('pricing.subscribe') : t('pricing.signUpToSubscribe')}
                   </Button>
                 </div>
                 <div className="px-6 pt-6 pb-8">
                   <h3 className="text-xs font-medium text-white tracking-wide uppercase">
-                    What&apos;s included
+                    {t('pricing.whatsIncluded')}
                   </h3>
                   <ul className="mt-6 space-y-4">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex space-x-3">
+                    {plan.features.map((feature, index) => (
+                      <li key={index} className="flex space-x-3">
                         <svg
                           className="flex-shrink-0 w-5 h-5 text-green-500"
                           xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +132,9 @@ export default function StayLogPricing({ user }: Props) {
                             clipRule="evenodd"
                           />
                         </svg>
-                        <span className="text-sm text-zinc-200">{feature}</span>
+                        <span className="text-sm text-zinc-200">
+                          {t(`pricing.plans.${plan.id}.features.${index}`)}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -141,7 +145,7 @@ export default function StayLogPricing({ user }: Props) {
         </div>
         <div className="mt-10 text-center">
           <p className="text-zinc-400">
-            All prices are in Japanese Yen (JPY). Yearly billing saves you 15% compared to monthly billing.
+            {t('pricing.currencyNote')}
           </p>
         </div>
       </div>

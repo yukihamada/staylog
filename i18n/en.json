@@ -1,0 +1,231 @@
+{
+  "common": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "account": "Account",
+    "pricing": "Pricing",
+    "features": "Features",
+    "support": "Support",
+    "getStarted": "Get Started",
+    "viewPricing": "View Pricing",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "next": "Next",
+    "required": "Required",
+    "optional": "Optional",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "home": {
+    "title": "Simplify guest registration",
+    "subtitle": "for your accommodation",
+    "description": "StayLog makes it easy to collect and manage guest information in compliance with the Ryokan Business Act. Save time, reduce errors, and improve the check-in experience.",
+    "cta": "Get started"
+  },
+  "pricing": {
+    "title": "StayLog Pricing Plans",
+    "subtitle": "Choose the perfect plan for your accommodation needs. All plans include our core guest registration features.",
+    "monthlyBilling": "Monthly billing",
+    "yearlyBilling": "Yearly billing",
+    "perMonth": "/month",
+    "perYear": "/year",
+    "subscribe": "Subscribe",
+    "manage": "Manage",
+    "signUpToSubscribe": "Sign up to subscribe",
+    "whatsIncluded": "What's included",
+    "currencyNote": "All prices are in Japanese Yen (JPY). Yearly billing saves you 15% compared to monthly billing.",
+    "plans": {
+      "basic": {
+        "name": "Basic",
+        "description": "For small accommodations",
+        "features": [
+          "1 facility",
+          "100 guest registrations per month",
+          "Basic guest information management",
+          "Email support"
+        ]
+      },
+      "standard": {
+        "name": "Standard",
+        "description": "For medium-sized accommodations",
+        "features": [
+          "Up to 3 facilities",
+          "500 guest registrations per month",
+          "Advanced analytics",
+          "Multi-language support",
+          "Email & chat support"
+        ]
+      },
+      "professional": {
+        "name": "Professional",
+        "description": "For large accommodations",
+        "features": [
+          "Unlimited facilities",
+          "Unlimited guest registrations",
+          "API integration",
+          "Custom form creation",
+          "Priority support",
+          "Dedicated account manager"
+        ]
+      }
+    }
+  },
+  "features": {
+    "title": "Features",
+    "subtitle": "Everything you need for guest registration",
+    "description": "StayLog provides all the tools you need to streamline your guest registration process and stay compliant with regulations.",
+    "list": {
+      "registration": {
+        "title": "Easy Guest Registration",
+        "description": "Simplify the check-in process with digital forms that can be filled out in advance or at check-in."
+      },
+      "multilingual": {
+        "title": "Multi-language Support",
+        "description": "Support guests from around the world with forms available in Japanese, English, Chinese, and Korean."
+      },
+      "compliance": {
+        "title": "Legal Compliance",
+        "description": "Stay compliant with the Ryokan Business Act and other regulations with proper data collection and storage."
+      },
+      "qrCode": {
+        "title": "QR Code Sharing",
+        "description": "Generate QR codes for guests to easily access registration forms on their own devices."
+      },
+      "secureStorage": {
+        "title": "Secure Data Storage",
+        "description": "Keep guest information secure with encrypted storage and proper access controls."
+      },
+      "analytics": {
+        "title": "Analytics Dashboard",
+        "description": "Gain insights into your guest demographics and registration patterns with detailed analytics."
+      }
+    }
+  },
+  "registration": {
+    "title": "Guest Registration",
+    "subtitle": "Please provide your information as required by the Ryokan Business Act.",
+    "form": {
+      "fullName": "Full Name",
+      "address": "Address",
+      "phone": "Phone Number",
+      "nationality": "Nationality",
+      "passportNumber": "Passport Number (for non-Japanese nationals)",
+      "passportNote": "Not required for Japanese nationals",
+      "dateOfBirth": "Date of Birth",
+      "idPhoto": "ID Photo",
+      "idPhotoNote": "Please upload a photo of your ID (driver's license, passport, etc.). For privacy protection, please hide any sensitive information.",
+      "register": "Register"
+    },
+    "confirmation": {
+      "title": "Registration Complete",
+      "subtitle": "Your information has been successfully registered.",
+      "message": "Thank you for registering your information.",
+      "otherGuests": "If there are other guests in your party, you can share the registration link with them.",
+      "shareInfo": "Share this link with other guests in your party to register their information.",
+      "registrationUrl": "Registration URL",
+      "copy": "Copy",
+      "copied": "Copied!",
+      "showQrCode": "Show QR Code",
+      "hideQrCode": "Hide QR Code",
+      "share": "Share",
+      "backToHome": "Back to Home"
+    }
+  },
+  "account": {
+    "title": "Account",
+    "subtitle": "Manage your account information and subscription.",
+    "profile": {
+      "title": "Profile",
+      "name": "Name",
+      "email": "Email",
+      "updateProfile": "Update Profile"
+    },
+    "subscription": {
+      "title": "Subscription",
+      "currentPlan": "Current Plan",
+      "status": "Status",
+      "nextBilling": "Next Billing Date",
+      "manageBilling": "Manage Billing",
+      "cancelSubscription": "Cancel Subscription",
+      "reactivateSubscription": "Reactivate Subscription",
+      "noPlan": "You don't have an active plan.",
+      "choosePlan": "Choose a Plan"
+    },
+    "facilities": {
+      "title": "Facilities",
+      "addFacility": "Add Facility",
+      "editFacility": "Edit Facility",
+      "deleteFacility": "Delete Facility",
+      "noFacilities": "You don't have any facilities yet.",
+      "name": "Facility Name",
+      "address": "Address",
+      "type": "Facility Type",
+      "capacity": "Capacity"
+    }
+  },
+  "auth": {
+    "signIn": {
+      "title": "Sign In",
+      "subtitle": "Sign in to your account.",
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create an account",
+      "signInButton": "Sign In"
+    },
+    "signUp": {
+      "title": "Sign Up",
+      "subtitle": "Create your account.",
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "haveAccount": "Already have an account?",
+      "signIn": "Sign in",
+      "signUpButton": "Sign Up",
+      "termsAndConditions": "I agree to the Terms and Conditions",
+      "privacyPolicy": "I agree to the Privacy Policy"
+    },
+    "forgotPassword": {
+      "title": "Reset Password",
+      "subtitle": "We'll send you a link to reset your password.",
+      "email": "Email",
+      "sendResetLink": "Send Reset Link",
+      "backToSignIn": "Back to Sign In"
+    },
+    "resetPassword": {
+      "title": "Set New Password",
+      "subtitle": "Enter your new password.",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password",
+      "resetPassword": "Reset Password"
+    }
+  },
+  "errors": {
+    "general": "An error occurred. Please try again.",
+    "auth": {
+      "invalidCredentials": "Invalid email or password.",
+      "emailInUse": "This email is already in use.",
+      "weakPassword": "Password is too weak. It should be at least 8 characters long and include letters, numbers, and symbols.",
+      "passwordMismatch": "Passwords do not match.",
+      "invalidEmail": "Please enter a valid email address."
+    },
+    "form": {
+      "required": "This field is required.",
+      "invalidFormat": "Invalid format.",
+      "tooShort": "Input is too short.",
+      "tooLong": "Input is too long."
+    },
+    "subscription": {
+      "paymentFailed": "Payment failed. Please check your payment method.",
+      "alreadySubscribed": "You are already subscribed to this plan."
+    }
+  }
+}

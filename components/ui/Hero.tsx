@@ -2,9 +2,11 @@
 
 import { useRouter } from 'next/navigation';
 import Button from '@/components/ui/Button';
+import { useI18n } from '@/i18n/context';
 
 export default function Hero() {
   const router = useRouter();
+  const { t } = useI18n();
 
   return (
     <div className="relative overflow-hidden bg-black">
@@ -13,11 +15,11 @@ export default function Hero() {
           <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-                <span className="block xl:inline">Simplify guest registration</span>{' '}
-                <span className="block text-indigo-600 xl:inline">for your accommodation</span>
+                <span className="block xl:inline">{t('home.title')}</span>{' '}
+                <span className="block text-indigo-600 xl:inline">{t('home.subtitle')}</span>
               </h1>
               <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                StayLog makes it easy to collect and manage guest information in compliance with the Ryokan Business Act. Save time, reduce errors, and improve the check-in experience.
+                {t('home.description')}
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
@@ -26,7 +28,7 @@ export default function Hero() {
                     onClick={() => router.push('/signin/signup')}
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
                   >
-                    Get started
+                    {t('common.getStarted')}
                   </Button>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
@@ -38,7 +40,7 @@ export default function Hero() {
                     }}
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
                   >
-                    View pricing
+                    {t('common.viewPricing')}
                   </Button>
                 </div>
               </div>
@@ -50,24 +52,24 @@ export default function Hero() {
         <div className="h-56 w-full bg-indigo-900 sm:h-72 md:h-96 lg:w-full lg:h-full flex items-center justify-center">
           <div className="max-w-md p-6 bg-white rounded-lg shadow-lg">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-gray-800">Guest Registration</h3>
+              <h3 className="text-lg font-semibold text-gray-800">{t('registration.title')}</h3>
               <div className="text-sm text-gray-500">Room 101</div>
             </div>
             <div className="space-y-3">
               <div className="flex flex-col">
-                <label className="text-xs text-gray-500">Full Name</label>
+                <label className="text-xs text-gray-500">{t('registration.form.fullName')}</label>
                 <div className="h-8 bg-gray-100 rounded-md"></div>
               </div>
               <div className="flex flex-col">
-                <label className="text-xs text-gray-500">Address</label>
+                <label className="text-xs text-gray-500">{t('registration.form.address')}</label>
                 <div className="h-8 bg-gray-100 rounded-md"></div>
               </div>
               <div className="flex flex-col">
-                <label className="text-xs text-gray-500">Passport/ID</label>
+                <label className="text-xs text-gray-500">{t('registration.form.idPhoto')}</label>
                 <div className="h-8 bg-gray-100 rounded-md"></div>
               </div>
               <div className="flex flex-col">
-                <label className="text-xs text-gray-500">Phone Number</label>
+                <label className="text-xs text-gray-500">{t('registration.form.phone')}</label>
                 <div className="h-8 bg-gray-100 rounded-md"></div>
               </div>
             </div>

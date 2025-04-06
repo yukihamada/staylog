@@ -6,6 +6,8 @@ import { handleRequest } from '@/utils/auth-helpers/client';
 import Logo from '@/components/icons/Logo';
 import { usePathname, useRouter } from 'next/navigation';
 import { getRedirectMethod } from '@/utils/auth-helpers/settings';
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
+import { useI18n } from '@/i18n/context';
 import s from './Navbar.module.css';
 
 interface NavlinksProps {
@@ -14,6 +16,7 @@ interface NavlinksProps {
 
 export default function Navlinks({ user }: NavlinksProps) {
   const router = getRedirectMethod() === 'client' ? useRouter() : null;
+  const { t } = useI18n();
 
   return (
     <div className="relative flex flex-row justify-between py-4 align-center md:py-6">
@@ -23,32 +26,33 @@ export default function Navlinks({ user }: NavlinksProps) {
         </Link>
         <nav className="ml-6 space-x-2 lg:block">
           <Link href="/" className={s.link}>
-            Pricing
+            {t('common.pricing')}
           </Link>
           <Link href="/features" className={s.link}>
-            Features
+            {t('common.features')}
           </Link>
           <Link href="/support" className={s.link}>
-            Support
+            {t('common.support')}
           </Link>
           {user && (
             <Link href="/account" className={s.link}>
-              Account
+              {t('common.account')}
             </Link>
           )}
         </nav>
       </div>
-      <div className="flex justify-end space-x-8">
+      <div className="flex justify-end items-center space-x-4">
+        <LanguageSwitcher />
         {user ? (
           <form onSubmit={(e) => handleRequest(e, SignOut, router)}>
             <input type="hidden" name="pathName" value={usePathname()} />
             <button type="submit" className={s.link}>
-              Sign out
+              {t('common.signOut')}
             </button>
           </form>
         ) : (
           <Link href="/signin" className={s.link}>
-            Sign In
+            {t('common.signIn')}
           </Link>
         )}
       </div>
