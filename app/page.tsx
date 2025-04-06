@@ -1,24 +1,18 @@
-import Pricing from '@/components/ui/Pricing/Pricing';
+import StayLogPricing from '@/components/ui/Pricing/StayLogPricing';
 import { createClient } from '@/utils/supabase/server';
-import {
-  getProducts,
-  getSubscription,
-  getUser
-} from '@/utils/supabase/queries';
+import { getUser } from '@/utils/supabase/queries';
+import Hero from '@/components/ui/Hero';
+import Features from '@/components/ui/Features';
 
-export default async function PricingPage() {
+export default async function HomePage() {
   const supabase = createClient();
-  const [user, products, subscription] = await Promise.all([
-    getUser(supabase),
-    getProducts(supabase),
-    getSubscription(supabase)
-  ]);
+  const user = await getUser(supabase);
 
   return (
-    <Pricing
-      user={user}
-      products={products ?? []}
-      subscription={subscription}
-    />
+    <>
+      <Hero />
+      <StayLogPricing user={user} />
+      <Features />
+    </>
   );
 }

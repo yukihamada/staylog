@@ -1,0 +1,2 @@
+const title = 'StayLog - Easy & Secure Guest Registration';
+const description = 'A service that makes it easy to register guest information based on the Ryokan Business Act.';

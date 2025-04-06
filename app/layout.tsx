@@ -6,8 +6,8 @@ import { PropsWithChildren, Suspense } from 'react';
 import { getURL } from '@/utils/helpers';
 import 'styles/main.css';
 
-const title = 'Next.js Subscription Starter';
-const description = 'Brought to you by Vercel, Stripe, and Supabase.';
+const title = 'StayLog - Easy & Secure Guest Registration';
+const description = 'A service that makes it easy to register guest information based on the Ryokan Business Act.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(getURL()),
