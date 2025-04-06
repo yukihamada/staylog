@@ -133,7 +133,7 @@ export default function ConfirmationContent({ bookingId, user }: ConfirmationCon
             {showQR ? 'Hide QR Code' : 'Show QR Code'}
           </Button>
           
-          {navigator.share && (
+          {typeof navigator !== 'undefined' && 'share' in navigator && (
             <Button
               variant="slim"
               onClick={handleShare}
